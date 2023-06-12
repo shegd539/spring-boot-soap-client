@@ -1,0 +1,598 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts">
+<xs:import schemaLocation="xsd2.xsd" namespace="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO"/>
+<xs:import schemaLocation="xsd5.xsd" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic"/>
+<xs:import schemaLocation="xsd4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:import schemaLocation="xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xs:complexType name="P3AWSHeader">
+<xs:sequence>
+<xs:element minOccurs="0" name="CorrelationID" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="P3AWSHeader" nillable="true" type="tns:P3AWSHeader"/>
+<xs:complexType name="Request">
+<xs:sequence>
+<xs:element minOccurs="0" name="AchInstructions" nillable="true" type="tns:ArrayOfAchInstruction"/>
+<xs:element minOccurs="0" name="AdditionalAccountProfiles" nillable="true" type="tns:ArrayOfAdditionalAccountInfo"/>
+<xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="AdvisoryData" nillable="true" type="q1:AdvisoryData"/>
+<xs:element minOccurs="0" name="CdmAdminData" nillable="true" type="tns:CdmAdminData"/>
+<xs:element minOccurs="0" name="Disbursement" nillable="true" type="tns:Disbursement"/>
+<xs:element minOccurs="0" name="PaymentSummaries" nillable="true" type="tns:ArrayOfPaymentSummary"/>
+<xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Requestor" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="WireInstructions" nillable="true" type="tns:ArrayOfWireRecurringInstructionMini"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Request" nillable="true" type="tns:Request"/>
+<xs:complexType name="ArrayOfAchInstruction">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AchInstruction" nillable="true" type="tns:AchInstruction"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAchInstruction" nillable="true" type="tns:ArrayOfAchInstruction"/>
+<xs:complexType name="AchInstruction">
+<xs:sequence>
+<xs:element minOccurs="0" name="ABANumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ACHAlias" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ACHType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AddNewAch" type="xs:boolean"/>
+<xs:element minOccurs="0" name="BankAccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BankNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DDAIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="InternalABA" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Payee" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PingInstruction1" nillable="true" type="tns:PingInstruction"/>
+<xs:element minOccurs="0" name="PingInstruction2" nillable="true" type="tns:PingInstruction"/>
+<xs:element minOccurs="0" name="PingInstruction3" nillable="true" type="tns:PingInstruction"/>
+<xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AchInstruction" nillable="true" type="tns:AchInstruction"/>
+<xs:complexType name="PingInstruction">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DDAIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PingRequestAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PingRequestTrailer" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PingRequestType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PingInstruction" nillable="true" type="tns:PingInstruction"/>
+<xs:complexType name="ArrayOfAdditionalAccountInfo">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalAccountInfo" nillable="true" type="tns:AdditionalAccountInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAdditionalAccountInfo" nillable="true" type="tns:ArrayOfAdditionalAccountInfo"/>
+<xs:complexType name="AdditionalAccountInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RelationType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TaxIDIndicator" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AdditionalAccountInfo" nillable="true" type="tns:AdditionalAccountInfo"/>
+<xs:complexType name="CdmAdminData">
+<xs:sequence>
+<xs:element minOccurs="0" name="ApproverModel" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisableAcb" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisableAchInstructions" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisableApproverEditing" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisableThirdPartyCheck" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisableWireCurr" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CdmAdminData" nillable="true" type="tns:CdmAdminData"/>
+<xs:complexType name="Disbursement">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountInfo" nillable="true" type="tns:AccountInfo"/>
+<xs:element minOccurs="0" name="Ach" nillable="true" type="tns:AchInstruction"/>
+<xs:element minOccurs="0" name="AlternateAddress" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="Beneficiary" nillable="true" type="tns:Beneficiary"/>
+<xs:element minOccurs="0" name="DisbursementType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FedRefNo" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Ira" nillable="true" type="tns:Ira"/>
+<xs:element minOccurs="0" name="MailToAddress" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReasonForThirdPartyOrAlternateAddress" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReceiptRefID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReceiverBIC" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SpecialInstructions" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ThirdPartyAddress" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="TransactionDetails" nillable="true" type="tns:TransactionDetails"/>
+<xs:element minOccurs="0" name="WireReference" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Disbursement" nillable="true" type="tns:Disbursement"/>
+<xs:complexType name="AccountInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="ABA" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ACHType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountCategory" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountClosedIndicator" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountClosedReason" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountMailRestriction" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountMailRestrictionDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNature" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AdjustedMarginFreeCash" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Agreement" nillable="true" type="tns:Agreement"/>
+<xs:element minOccurs="0" name="BrokerId" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CashAvailable" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CashBalance" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DDA" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FreeCashBalance" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRACategory" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="MoneyMarketFundBalance" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Note1" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Note2" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RelationType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TaxIDIndicator" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TotalFundsAvailableForWithdrawal" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AccountInfo" nillable="true" type="tns:AccountInfo"/>
+<xs:complexType name="Agreement">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNature" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AgreementDetailList" nillable="true" type="tns:ArrayOfAgreementDetail"/>
+<xs:element minOccurs="0" name="ErrorString" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReturnValue" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Agreement" nillable="true" type="tns:Agreement"/>
+<xs:complexType name="ArrayOfAgreementDetail">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AgreementDetail" nillable="true" type="tns:AgreementDetail"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAgreementDetail" nillable="true" type="tns:ArrayOfAgreementDetail"/>
+<xs:complexType name="AgreementDetail">
+<xs:sequence>
+<xs:element minOccurs="0" name="Code" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Date" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AgreementDetail" nillable="true" type="tns:AgreementDetail"/>
+<xs:complexType name="AccountAndAddress">
+<xs:sequence>
+<xs:element minOccurs="0" name="ABANumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AddressLine1" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AddressLine2" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AddressLine3" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AddressLine4" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BusinessOrPerson" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ConversationDateTime" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Country" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Number" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OFAC_Match" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OFAC_TextReport" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OtherName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestorRole" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="State" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SwiftCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TrailerInstruction" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AccountAndAddress" nillable="true" type="tns:AccountAndAddress"/>
+<xs:complexType name="Beneficiary">
+<xs:sequence>
+<xs:element minOccurs="0" name="BankDetails" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="BeneficiaryBankDetails" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="ClientInquiryInformation" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="FurtherCreditTo" nillable="true" type="tns:AccountAndAddress"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Beneficiary" nillable="true" type="tns:Beneficiary"/>
+<xs:complexType name="Ira">
+<xs:sequence>
+<xs:element minOccurs="0" name="AdditionalIrsType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentEmployeeContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentEmployerContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentPreDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentYearContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentYearEmployeeContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentYearEmployerContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DistributionAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExcessEarnings" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExcessEarningsFederalWithHoldingAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExcessEarningsFederalWithHoldingAmountInPercentage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExcessEarningsStateWithHoldingAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExcessEarningsStateWithHoldingAmountInPercentage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExistingFederalWithHoldingAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExistingStateWithHoldingAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FederalMinimumPercentage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FederalWithHoldingAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FederalWithHoldingAmountInPercentage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="GLBranch" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="GLDepartment" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRADisbursementType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRATransactionType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRSType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastEmployeeContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastEmployerContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastPreDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NetDistributionAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="NetExcessEarnings" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OverrideCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PlanType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PriorYearContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PriorYearEmployeeContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PriorYearEmployerContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RMDAccountingType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RMDAcctType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StateMinimumPercentage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StateWithHoldingAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StateWithHoldingAmountInPercentage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="WithHoldChecked" type="xs:boolean"/>
+<xs:element minOccurs="0" name="WithholdFederalTaxes" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="WithholdStateTaxes" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Year" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Ira" nillable="true" type="tns:Ira"/>
+<xs:complexType name="TransactionDetails">
+<xs:sequence>
+<xs:element minOccurs="0" name="ACHAlias" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AllOrNone" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AmountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ApprovedAmount" nillable="true" type="xs:string"/>
+<xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="ClientInfo" nillable="true" type="q2:ArrayOfKeyValuePairOfstringstring"/>
+<xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Cycle" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Day" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DdaIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Delivery" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DenialReason" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisbursedDateTime" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EndDateOn" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EndDateafter" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ExternalBankName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FeeInstructions" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FirstLevel" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FrequencyScheduled" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="HoldUntilDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastUpdateDateTime" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LinkSequenceNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LockDetails" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LockStatus" type="xs:int"/>
+<xs:element minOccurs="0" name="NetAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OfacOverrideComments" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OfacOverrideReason" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OfacStatus" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Phase3Bank" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Phase3Trailer" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestDateTime" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestedAmount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Requestor" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestorApplication" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SecondLevel" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SenderAccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TransactionStatus" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="WireInterfaceType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="TransactionDetails" nillable="true" type="tns:TransactionDetails"/>
+<xs:complexType name="ArrayOfPaymentSummary">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentSummary" nillable="true" type="tns:PaymentSummary"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfPaymentSummary" nillable="true" type="tns:ArrayOfPaymentSummary"/>
+<xs:complexType name="PaymentSummary">
+<xs:sequence>
+<xs:element minOccurs="0" name="Active" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Detail" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DisbursementType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Frequency" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PayMethod" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Payee" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RecordNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TransactionType" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PaymentSummary" nillable="true" type="tns:PaymentSummary"/>
+<xs:complexType name="ArrayOfWireRecurringInstructionMini">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="WireRecurringInstructionMini" nillable="true" type="tns:WireRecurringInstructionMini"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfWireRecurringInstructionMini" nillable="true" type="tns:ArrayOfWireRecurringInstructionMini"/>
+<xs:complexType name="WireRecurringInstructionMini">
+<xs:sequence>
+<xs:element minOccurs="0" name="ABANumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BankDetails" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="BeneficiaryBankDetails" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="DDANumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FurtherCreditToName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FurtherCreditToNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IntermediaryBankDetails" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="Payee" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RecordNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Type" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="WireRecurringInstructionMini" nillable="true" type="tns:WireRecurringInstructionMini"/>
+<xs:complexType name="ArrayOfAccountDetail">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AccountDetail" nillable="true" type="tns:AccountDetail"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAccountDetail" nillable="true" type="tns:ArrayOfAccountDetail"/>
+<xs:complexType name="AccountDetail">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountCategory" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountClosedIndicator" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountClosedReason" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountMailRestriction" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountMailRestrictionDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNature" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AdjustedMarginFreeCash" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Agreement" nillable="true" type="tns:Agreement"/>
+<xs:element minOccurs="0" name="CashAvailable" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentEmployeeContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentEmployerContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentPreDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentYearContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentYearEmployeeContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CurrentYearEmployerContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ErrorString" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRACategory" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRAPlanType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRARMDAccountingType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IRARMDAcctType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastEmployeeContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastEmployerContribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastPreDistribution" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OfficeRR" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PriorYearContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PriorYearEmployeeContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PriorYearEmployerContributionLimit" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Profile" nillable="true" type="tns:Profile"/>
+<xs:element minOccurs="0" name="ReturnValue" type="xs:boolean"/>
+<xs:element minOccurs="0" name="TotalFundsAvailableForWithdrawal" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AccountDetail" nillable="true" type="tns:AccountDetail"/>
+<xs:complexType name="Profile">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ErrorString" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Note1" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Note2" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RelationType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReturnValue" type="xs:boolean"/>
+<xs:element minOccurs="0" name="TaxID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TaxIDIndicator" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Profile" nillable="true" type="tns:Profile"/>
+<xs:complexType name="Receipt">
+<xs:sequence>
+<xs:element minOccurs="0" name="ABANumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountAndAddress" nillable="true" type="tns:AccountAndAddress"/>
+<xs:element minOccurs="0" name="AccountCategory" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountInfo" nillable="true" type="tns:AccountInfo"/>
+<xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNature" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AccountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Ach" nillable="true" type="tns:AchInstruction"/>
+<xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="AdvisoryData" nillable="true" type="q3:AdvisoryData"/>
+<xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BankNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="BrokerID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CdmAdminData" nillable="true" type="tns:CdmAdminData"/>
+<xs:element minOccurs="0" name="CreatedByUser" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CreatedDateTimeStamp" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DDAIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DDANumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="DescriptionOrSpecialInstruction" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Ira" nillable="true" type="tns:Ira"/>
+<xs:element minOccurs="0" name="LastUpdatedByUser" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LastUpdatedDateTimeStamp" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="PaymentSummaries" nillable="true" type="tns:ArrayOfPaymentSummary"/>
+<xs:element minOccurs="0" name="ReceiptType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReceivedDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TransactionDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TransactionDetails" nillable="true" type="tns:TransactionDetails"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Receipt" nillable="true" type="tns:Receipt"/>
+<xs:complexType name="SearchParameters">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="LogType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OfficeCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Parameter" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="pagerControl" nillable="true" type="tns:PagerControl"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SearchParameters" nillable="true" type="tns:SearchParameters"/>
+<xs:complexType name="PagerControl">
+<xs:sequence>
+<xs:element minOccurs="0" name="PagerUniqueID" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="sortFields" nillable="true" type="tns:ArrayOfSortFields"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="PagerControl" nillable="true" type="tns:PagerControl"/>
+<xs:complexType name="ArrayOfSortFields">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="SortFields" nillable="true" type="tns:SortFields"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfSortFields" nillable="true" type="tns:ArrayOfSortFields"/>
+<xs:complexType name="SortFields">
+<xs:sequence>
+<xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="SortOrder" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="SortFields" nillable="true" type="tns:SortFields"/>
+<xs:complexType name="Receipts">
+<xs:sequence>
+<xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="AdvisoryData" nillable="true" type="q4:AdvisoryData"/>
+<xs:element minOccurs="0" name="CashReceipts" nillable="true" type="tns:ArrayOfReceipt"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Receipts" nillable="true" type="tns:Receipts"/>
+<xs:complexType name="ArrayOfReceipt">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Receipt" nillable="true" type="tns:Receipt"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfReceipt" nillable="true" type="tns:ArrayOfReceipt"/>
+<xs:complexType name="DisbursementList">
+<xs:sequence>
+<xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="Advisory" nillable="true" type="q5:AdvisoryData"/>
+<xs:element minOccurs="0" name="CdmAdminData" nillable="true" type="tns:CdmAdminData"/>
+<xs:element minOccurs="0" name="Disbursements" nillable="true" type="tns:ArrayOfDisbursement"/>
+<xs:element minOccurs="0" name="MoreRecordsAvailable" type="xs:boolean"/>
+<xs:element minOccurs="0" name="pagerControl" nillable="true" type="tns:PagerControl"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="DisbursementList" nillable="true" type="tns:DisbursementList"/>
+<xs:complexType name="ArrayOfDisbursement">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Disbursement" nillable="true" type="tns:Disbursement"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfDisbursement" nillable="true" type="tns:ArrayOfDisbursement"/>
+<xs:complexType name="CountryAndCurrencyList">
+<xs:sequence>
+<xs:element minOccurs="0" name="Countries" nillable="true" type="tns:ArrayOfCountry"/>
+<xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Currencies" nillable="true" type="q6:ArrayOfstring"/>
+<xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="advisoryData" nillable="true" type="q7:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="CountryAndCurrencyList" nillable="true" type="tns:CountryAndCurrencyList"/>
+<xs:complexType name="ArrayOfCountry">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="Country" nillable="true" type="tns:Country"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfCountry" nillable="true" type="tns:ArrayOfCountry"/>
+<xs:complexType name="Country">
+<xs:sequence>
+<xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="OfacFalg" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="Country" nillable="true" type="tns:Country"/>
+<xs:complexType name="TransactionCollection">
+<xs:sequence>
+<xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="AdvisoryData" nillable="true" type="q8:AdvisoryData"/>
+<xs:element minOccurs="0" name="Disbursements" nillable="true" type="tns:DisbursementList"/>
+<xs:element minOccurs="0" name="Receipts" nillable="true" type="tns:Receipts"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="TransactionCollection" nillable="true" type="tns:TransactionCollection"/>
+<xs:complexType name="AvailableBalanceInfo">
+<xs:sequence>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+<xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="Advisory" nillable="true" type="q9:AdvisoryData"/>
+<xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="BalanceInfo" nillable="true" type="q10:ArrayOfKeyValuePairOfstringstring"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AvailableBalanceInfo" nillable="true" type="tns:AvailableBalanceInfo"/>
+<xs:complexType name="InternalTransfers">
+<xs:sequence>
+<xs:element minOccurs="0" name="AllOrNone" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Amount" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="AmountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Currency" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Cycle" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Day" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="EndDateOn" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FrequencyScheduled" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromAccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromAccountOperatingCompanyIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromAccountPrimaryIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromAccountProductCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromAccountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="FromTrailerInstruction" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Ira" nillable="true" type="tns:Ira"/>
+<xs:element minOccurs="0" name="ReferenceNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="RequestorApplication" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountNumber" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountOperatingCompanyIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountPrimaryIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountProductCode" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountType" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToAccountUserIdentifier" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="ToTrailerInstruction" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="TransactionStatus" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="InternalTransfers" nillable="true" type="tns:InternalTransfers"/>
+<xs:complexType name="ArrayOfAutoApproveRestrictionDetails">
+<xs:sequence>
+<xs:element minOccurs="0" maxOccurs="unbounded" name="AutoApproveRestrictionDetails" nillable="true" type="tns:AutoApproveRestrictionDetails"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="ArrayOfAutoApproveRestrictionDetails" nillable="true" type="tns:ArrayOfAutoApproveRestrictionDetails"/>
+<xs:complexType name="AutoApproveRestrictionDetails">
+<xs:sequence>
+<xs:element minOccurs="0" name="AdvisoryErrorMessage" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="Description" nillable="true" type="xs:string"/>
+<xs:element minOccurs="0" name="IsActive" type="xs:boolean"/>
+<xs:element minOccurs="0" name="RestrictCode" type="ser:char"/>
+<xs:element minOccurs="0" name="ReviewQueue" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+<xs:element name="AutoApproveRestrictionDetails" nillable="true" type="tns:AutoApproveRestrictionDetails"/>
+</xs:schema>

@@ -1,0 +1,763 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="CdmBackendService" targetNamespace="http://tempuri.org/">
+<wsdl:types>
+<xsd:schema targetNamespace="http://tempuri.org/Imports">
+<xsd:import schemaLocation="xsd0.xsd" namespace="http://tempuri.org/"/>
+<xsd:import schemaLocation="xsd3.xsd" namespace="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts"/>
+<xsd:import schemaLocation="xsd1.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+<xsd:import schemaLocation="xsd2.xsd" namespace="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO"/>
+<xsd:import schemaLocation="xsd4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xsd:import schemaLocation="xsd5.xsd" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="ICdmBackendService_GetAccountDetails_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAccountDetails"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountDetails_InputMessage_Headers">
+<wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q1:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountDetails_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAccountDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountDetails_OutputMessage_Headers">
+<wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q2:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountDetails_StringFault_FaultMessage">
+<wsdl:part xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q3:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountListDetails_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAccountListDetails"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountListDetails_InputMessage_Headers">
+<wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q4:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountListDetails_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAccountListDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountListDetails_OutputMessage_Headers">
+<wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q5:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAccountListDetails_StringFault_FaultMessage">
+<wsdl:part xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q6:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveDisbursement_InputMessage">
+<wsdl:part name="parameters" element="tns:SaveDisbursement"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveDisbursement_InputMessage_Headers">
+<wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q7:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveDisbursement_OutputMessage">
+<wsdl:part name="parameters" element="tns:SaveDisbursementResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveDisbursement_OutputMessage_Headers">
+<wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q8:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveReceipt_InputMessage">
+<wsdl:part name="parameters" element="tns:SaveReceipt"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveReceipt_InputMessage_Headers">
+<wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q9:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveReceipt_OutputMessage">
+<wsdl:part name="parameters" element="tns:SaveReceiptResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveReceipt_OutputMessage_Headers">
+<wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q10:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveReceipt_StringFault_FaultMessage">
+<wsdl:part xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q11:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetReceipts_InputMessage">
+<wsdl:part name="parameters" element="tns:GetReceipts"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetReceipts_InputMessage_Headers">
+<wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q12:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetReceipts_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetReceiptsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetReceipts_OutputMessage_Headers">
+<wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q13:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetReceipts_StringFault_FaultMessage">
+<wsdl:part xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q14:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursements_InputMessage">
+<wsdl:part name="parameters" element="tns:GetDisbursements"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursements_InputMessage_Headers">
+<wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q15:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursements_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetDisbursementsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursements_OutputMessage_Headers">
+<wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q16:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursements_StringFault_FaultMessage">
+<wsdl:part xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q17:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursementsForFirm_InputMessage">
+<wsdl:part name="parameters" element="tns:GetDisbursementsForFirm"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursementsForFirm_InputMessage_Headers">
+<wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q18:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursementsForFirm_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetDisbursementsForFirmResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursementsForFirm_OutputMessage_Headers">
+<wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q19:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetDisbursementsForFirm_StringFault_FaultMessage">
+<wsdl:part xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q20:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursements_InputMessage">
+<wsdl:part name="parameters" element="tns:UpdateDisbursements"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursements_InputMessage_Headers">
+<wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q21:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursements_OutputMessage">
+<wsdl:part name="parameters" element="tns:UpdateDisbursementsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursements_OutputMessage_Headers">
+<wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q22:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursements_StringFault_FaultMessage">
+<wsdl:part xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q23:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursementsForFirm_InputMessage">
+<wsdl:part name="parameters" element="tns:UpdateDisbursementsForFirm"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursementsForFirm_InputMessage_Headers">
+<wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q24:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursementsForFirm_OutputMessage">
+<wsdl:part name="parameters" element="tns:UpdateDisbursementsForFirmResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursementsForFirm_OutputMessage_Headers">
+<wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q25:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateDisbursementsForFirm_StringFault_FaultMessage">
+<wsdl:part xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q26:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetCountryAndCurrencyList_InputMessage">
+<wsdl:part name="parameters" element="tns:GetCountryAndCurrencyList"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetCountryAndCurrencyList_InputMessage_Headers">
+<wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q27:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetCountryAndCurrencyList_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetCountryAndCurrencyListResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetCountryAndCurrencyList_OutputMessage_Headers">
+<wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q28:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetCountryAndCurrencyList_StringFault_FaultMessage">
+<wsdl:part xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q29:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAchInstructions_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAchInstructions"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAchInstructions_InputMessage_Headers">
+<wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q30:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAchInstructions_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAchInstructionsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAchInstructions_OutputMessage_Headers">
+<wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q31:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAchInstructions_StringFault_FaultMessage">
+<wsdl:part xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q32:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SendPingInstruction_InputMessage">
+<wsdl:part name="parameters" element="tns:SendPingInstruction"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SendPingInstruction_InputMessage_Headers">
+<wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q33:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SendPingInstruction_OutputMessage">
+<wsdl:part name="parameters" element="tns:SendPingInstructionResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SendPingInstruction_OutputMessage_Headers">
+<wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q34:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SendPingInstruction_StringFault_FaultMessage">
+<wsdl:part xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q35:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_AddAchInstructions_InputMessage">
+<wsdl:part name="parameters" element="tns:AddAchInstructions"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_AddAchInstructions_InputMessage_Headers">
+<wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q36:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_AddAchInstructions_OutputMessage">
+<wsdl:part name="parameters" element="tns:AddAchInstructionsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_AddAchInstructions_OutputMessage_Headers">
+<wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q37:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_AddAchInstructions_StringFault_FaultMessage">
+<wsdl:part xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q38:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBankName_InputMessage">
+<wsdl:part name="parameters" element="tns:GetBankName"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBankName_InputMessage_Headers">
+<wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q39:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBankName_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetBankNameResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBankName_OutputMessage_Headers">
+<wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q40:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBankName_StringFault_FaultMessage">
+<wsdl:part xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q41:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAllTransactions_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAllTransactions"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAllTransactions_InputMessage_Headers">
+<wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q42:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAllTransactions_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAllTransactionsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAllTransactions_OutputMessage_Headers">
+<wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q43:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAllTransactions_StringFault_FaultMessage">
+<wsdl:part xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q44:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBalanceInfo_InputMessage">
+<wsdl:part name="parameters" element="tns:GetBalanceInfo"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBalanceInfo_InputMessage_Headers">
+<wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q45:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBalanceInfo_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetBalanceInfoResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBalanceInfo_OutputMessage_Headers">
+<wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q46:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetBalanceInfo_StringFault_FaultMessage">
+<wsdl:part xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q47:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateReceipt_InputMessage">
+<wsdl:part name="parameters" element="tns:UpdateReceipt"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateReceipt_InputMessage_Headers">
+<wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q48:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateReceipt_OutputMessage">
+<wsdl:part name="parameters" element="tns:UpdateReceiptResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateReceipt_OutputMessage_Headers">
+<wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q49:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateReceipt_StringFault_FaultMessage">
+<wsdl:part xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q50:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveInternalTransfer_InputMessage">
+<wsdl:part name="parameters" element="tns:SaveInternalTransfer"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveInternalTransfer_InputMessage_Headers">
+<wsdl:part xmlns:q51="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q51:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveInternalTransfer_OutputMessage">
+<wsdl:part name="parameters" element="tns:SaveInternalTransferResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveInternalTransfer_OutputMessage_Headers">
+<wsdl:part xmlns:q52="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q52:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_SaveInternalTransfer_StringFault_FaultMessage">
+<wsdl:part xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q53:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_ProcessSubmittedTransactions_InputMessage">
+<wsdl:part name="parameters" element="tns:ProcessSubmittedTransactions"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_ProcessSubmittedTransactions_InputMessage_Headers">
+<wsdl:part xmlns:q54="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q54:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_ProcessSubmittedTransactions_OutputMessage">
+<wsdl:part name="parameters" element="tns:ProcessSubmittedTransactionsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_ProcessSubmittedTransactions_OutputMessage_Headers">
+<wsdl:part xmlns:q55="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q55:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_ProcessSubmittedTransactions_StringFault_FaultMessage">
+<wsdl:part xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q56:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetRestrictionDetails_InputMessage">
+<wsdl:part name="parameters" element="tns:GetRestrictionDetails"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetRestrictionDetails_InputMessage_Headers">
+<wsdl:part xmlns:q57="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q57:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetRestrictionDetails_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetRestrictionDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetRestrictionDetails_OutputMessage_Headers">
+<wsdl:part xmlns:q58="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q58:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetRestrictionDetails_StringFault_FaultMessage">
+<wsdl:part xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q59:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateRestrictionDetails_InputMessage">
+<wsdl:part name="parameters" element="tns:UpdateRestrictionDetails"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateRestrictionDetails_InputMessage_Headers">
+<wsdl:part xmlns:q60="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q60:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateRestrictionDetails_OutputMessage">
+<wsdl:part name="parameters" element="tns:UpdateRestrictionDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateRestrictionDetails_OutputMessage_Headers">
+<wsdl:part xmlns:q61="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q61:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_UpdateRestrictionDetails_StringFault_FaultMessage">
+<wsdl:part xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q62:string"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAutoApprovalLogStoreDetail_InputMessage">
+<wsdl:part name="parameters" element="tns:GetAutoApprovalLogStoreDetail"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAutoApprovalLogStoreDetail_InputMessage_Headers">
+<wsdl:part xmlns:q63="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q63:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAutoApprovalLogStoreDetail_OutputMessage">
+<wsdl:part name="parameters" element="tns:GetAutoApprovalLogStoreDetailResponse"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAutoApprovalLogStoreDetail_OutputMessage_Headers">
+<wsdl:part xmlns:q64="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" name="P3AWSHeader" element="q64:P3AWSHeader"/>
+</wsdl:message>
+<wsdl:message name="ICdmBackendService_GetAutoApprovalLogStoreDetail_StringFault_FaultMessage">
+<wsdl:part xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q65:string"/>
+</wsdl:message>
+<wsdl:portType name="ICdmBackendService">
+<wsdl:operation name="GetAccountDetails">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetAccountDetails" message="tns:ICdmBackendService_GetAccountDetails_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetAccountDetailsResponse" message="tns:ICdmBackendService_GetAccountDetails_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetAccountDetailsStringFault" name="StringFault" message="tns:ICdmBackendService_GetAccountDetails_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetAccountListDetails">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetAccountListDetails" message="tns:ICdmBackendService_GetAccountListDetails_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetAccountListDetailsResponse" message="tns:ICdmBackendService_GetAccountListDetails_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetAccountListDetailsStringFault" name="StringFault" message="tns:ICdmBackendService_GetAccountListDetails_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="SaveDisbursement">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/SaveDisbursement" message="tns:ICdmBackendService_SaveDisbursement_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/SaveDisbursementResponse" message="tns:ICdmBackendService_SaveDisbursement_OutputMessage"/>
+</wsdl:operation>
+<wsdl:operation name="SaveReceipt">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/SaveReceipt" message="tns:ICdmBackendService_SaveReceipt_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/SaveReceiptResponse" message="tns:ICdmBackendService_SaveReceipt_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/SaveReceiptStringFault" name="StringFault" message="tns:ICdmBackendService_SaveReceipt_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetReceipts">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetReceipts" message="tns:ICdmBackendService_GetReceipts_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetReceiptsResponse" message="tns:ICdmBackendService_GetReceipts_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetReceiptsStringFault" name="StringFault" message="tns:ICdmBackendService_GetReceipts_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetDisbursements">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetDisbursements" message="tns:ICdmBackendService_GetDisbursements_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetDisbursementsResponse" message="tns:ICdmBackendService_GetDisbursements_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetDisbursementsStringFault" name="StringFault" message="tns:ICdmBackendService_GetDisbursements_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetDisbursementsForFirm">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetDisbursementsForFirm" message="tns:ICdmBackendService_GetDisbursementsForFirm_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetDisbursementsForFirmResponse" message="tns:ICdmBackendService_GetDisbursementsForFirm_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetDisbursementsForFirmStringFault" name="StringFault" message="tns:ICdmBackendService_GetDisbursementsForFirm_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateDisbursements">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateDisbursements" message="tns:ICdmBackendService_UpdateDisbursements_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateDisbursementsResponse" message="tns:ICdmBackendService_UpdateDisbursements_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateDisbursementsStringFault" name="StringFault" message="tns:ICdmBackendService_UpdateDisbursements_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateDisbursementsForFirm">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateDisbursementsForFirm" message="tns:ICdmBackendService_UpdateDisbursementsForFirm_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateDisbursementsForFirmResponse" message="tns:ICdmBackendService_UpdateDisbursementsForFirm_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateDisbursementsForFirmStringFault" name="StringFault" message="tns:ICdmBackendService_UpdateDisbursementsForFirm_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetCountryAndCurrencyList">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetCountryAndCurrencyList" message="tns:ICdmBackendService_GetCountryAndCurrencyList_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetCountryAndCurrencyListResponse" message="tns:ICdmBackendService_GetCountryAndCurrencyList_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetCountryAndCurrencyListStringFault" name="StringFault" message="tns:ICdmBackendService_GetCountryAndCurrencyList_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetAchInstructions">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetAchInstructions" message="tns:ICdmBackendService_GetAchInstructions_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetAchInstructionsResponse" message="tns:ICdmBackendService_GetAchInstructions_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetAchInstructionsStringFault" name="StringFault" message="tns:ICdmBackendService_GetAchInstructions_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="SendPingInstruction">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/SendPingInstruction" message="tns:ICdmBackendService_SendPingInstruction_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/SendPingInstructionResponse" message="tns:ICdmBackendService_SendPingInstruction_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/SendPingInstructionStringFault" name="StringFault" message="tns:ICdmBackendService_SendPingInstruction_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="AddAchInstructions">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/AddAchInstructions" message="tns:ICdmBackendService_AddAchInstructions_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/AddAchInstructionsResponse" message="tns:ICdmBackendService_AddAchInstructions_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/AddAchInstructionsStringFault" name="StringFault" message="tns:ICdmBackendService_AddAchInstructions_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetBankName">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetBankName" message="tns:ICdmBackendService_GetBankName_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetBankNameResponse" message="tns:ICdmBackendService_GetBankName_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetBankNameStringFault" name="StringFault" message="tns:ICdmBackendService_GetBankName_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetAllTransactions">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetAllTransactions" message="tns:ICdmBackendService_GetAllTransactions_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetAllTransactionsResponse" message="tns:ICdmBackendService_GetAllTransactions_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetAllTransactionsStringFault" name="StringFault" message="tns:ICdmBackendService_GetAllTransactions_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetBalanceInfo">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetBalanceInfo" message="tns:ICdmBackendService_GetBalanceInfo_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetBalanceInfoResponse" message="tns:ICdmBackendService_GetBalanceInfo_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetBalanceInfoStringFault" name="StringFault" message="tns:ICdmBackendService_GetBalanceInfo_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateReceipt">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateReceipt" message="tns:ICdmBackendService_UpdateReceipt_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateReceiptResponse" message="tns:ICdmBackendService_UpdateReceipt_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateReceiptStringFault" name="StringFault" message="tns:ICdmBackendService_UpdateReceipt_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="SaveInternalTransfer">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/SaveInternalTransfer" message="tns:ICdmBackendService_SaveInternalTransfer_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/SaveInternalTransferResponse" message="tns:ICdmBackendService_SaveInternalTransfer_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/SaveInternalTransferStringFault" name="StringFault" message="tns:ICdmBackendService_SaveInternalTransfer_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="ProcessSubmittedTransactions">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/ProcessSubmittedTransactions" message="tns:ICdmBackendService_ProcessSubmittedTransactions_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/ProcessSubmittedTransactionsResponse" message="tns:ICdmBackendService_ProcessSubmittedTransactions_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/ProcessSubmittedTransactionsStringFault" name="StringFault" message="tns:ICdmBackendService_ProcessSubmittedTransactions_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetRestrictionDetails">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetRestrictionDetails" message="tns:ICdmBackendService_GetRestrictionDetails_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetRestrictionDetailsResponse" message="tns:ICdmBackendService_GetRestrictionDetails_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetRestrictionDetailsStringFault" name="StringFault" message="tns:ICdmBackendService_GetRestrictionDetails_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateRestrictionDetails">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateRestrictionDetails" message="tns:ICdmBackendService_UpdateRestrictionDetails_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateRestrictionDetailsResponse" message="tns:ICdmBackendService_UpdateRestrictionDetails_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/UpdateRestrictionDetailsStringFault" name="StringFault" message="tns:ICdmBackendService_UpdateRestrictionDetails_StringFault_FaultMessage"/>
+</wsdl:operation>
+<wsdl:operation name="GetAutoApprovalLogStoreDetail">
+<wsdl:input wsaw:Action="http://tempuri.org/ICdmBackendService/GetAutoApprovalLogStoreDetail" message="tns:ICdmBackendService_GetAutoApprovalLogStoreDetail_InputMessage"/>
+<wsdl:output wsaw:Action="http://tempuri.org/ICdmBackendService/GetAutoApprovalLogStoreDetailResponse" message="tns:ICdmBackendService_GetAutoApprovalLogStoreDetail_OutputMessage"/>
+<wsdl:fault wsaw:Action="http://tempuri.org/ICdmBackendService/GetAutoApprovalLogStoreDetailStringFault" name="StringFault" message="tns:ICdmBackendService_GetAutoApprovalLogStoreDetail_StringFault_FaultMessage"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="BasicHttpBinding_ICdmBackendService" type="tns:ICdmBackendService">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="GetAccountDetails">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetAccountDetails" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetAccountDetails_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetAccountDetails_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetAccountListDetails">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetAccountListDetails" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetAccountListDetails_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetAccountListDetails_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="SaveDisbursement">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/SaveDisbursement" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_SaveDisbursement_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_SaveDisbursement_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SaveReceipt">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/SaveReceipt" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_SaveReceipt_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_SaveReceipt_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetReceipts">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetReceipts" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetReceipts_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetReceipts_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetDisbursements">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetDisbursements" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetDisbursements_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetDisbursements_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetDisbursementsForFirm">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetDisbursementsForFirm" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetDisbursementsForFirm_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetDisbursementsForFirm_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="UpdateDisbursements">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/UpdateDisbursements" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_UpdateDisbursements_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_UpdateDisbursements_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="UpdateDisbursementsForFirm">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/UpdateDisbursementsForFirm" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_UpdateDisbursementsForFirm_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_UpdateDisbursementsForFirm_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetCountryAndCurrencyList">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetCountryAndCurrencyList" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetCountryAndCurrencyList_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetCountryAndCurrencyList_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetAchInstructions">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetAchInstructions" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetAchInstructions_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetAchInstructions_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="SendPingInstruction">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/SendPingInstruction" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_SendPingInstruction_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_SendPingInstruction_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="AddAchInstructions">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/AddAchInstructions" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_AddAchInstructions_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_AddAchInstructions_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetBankName">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetBankName" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetBankName_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetBankName_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetAllTransactions">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetAllTransactions" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetAllTransactions_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetAllTransactions_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetBalanceInfo">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetBalanceInfo" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetBalanceInfo_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetBalanceInfo_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="UpdateReceipt">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/UpdateReceipt" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_UpdateReceipt_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_UpdateReceipt_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="SaveInternalTransfer">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/SaveInternalTransfer" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_SaveInternalTransfer_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_SaveInternalTransfer_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="ProcessSubmittedTransactions">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/ProcessSubmittedTransactions" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_ProcessSubmittedTransactions_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_ProcessSubmittedTransactions_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetRestrictionDetails">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetRestrictionDetails" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetRestrictionDetails_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetRestrictionDetails_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="UpdateRestrictionDetails">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/UpdateRestrictionDetails" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_UpdateRestrictionDetails_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_UpdateRestrictionDetails_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="GetAutoApprovalLogStoreDetail">
+<soap:operation soapAction="http://tempuri.org/ICdmBackendService/GetAutoApprovalLogStoreDetail" style="document"/>
+<wsdl:input>
+<soap:header message="tns:ICdmBackendService_GetAutoApprovalLogStoreDetail_InputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:header message="tns:ICdmBackendService_GetAutoApprovalLogStoreDetail_OutputMessage_Headers" part="P3AWSHeader" use="literal"/>
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="StringFault">
+<soap:fault name="StringFault" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="CdmBackendService">
+<wsdl:port name="BasicHttpBinding_ICdmBackendService" binding="tns:BasicHttpBinding_ICdmBackendService">
+<soap:address location="https://it-api-ist.us.bank-dns.com/SungardCashDisbursementManagerService_V_5_0"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

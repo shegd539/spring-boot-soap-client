@@ -1,0 +1,332 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<xs:import schemaLocation="xsd2.xsd" namespace="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO"/>
+<xs:import schemaLocation="xsd3.xsd" namespace="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts"/>
+<xs:import schemaLocation="xsd4.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+<xs:element name="GetAccountDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q1:FirmSecurity"/>
+<xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAccountDetailsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetAccountDetailsResult" nillable="true" type="q2:Request"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAccountListDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q3:FirmSecurity"/>
+<xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="lstaccountNumber" nillable="true" type="q4:ArrayOfstring"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAccountListDetailsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetAccountListDetailsResult" nillable="true" type="q5:ArrayOfAccountDetail"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SaveDisbursement">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q6:FirmSecurity"/>
+<xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="request" nillable="true" type="q7:Request"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SaveDisbursementResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="SaveDisbursementResult" nillable="true" type="q8:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SaveReceipt">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q9:FirmSecurity"/>
+<xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="receipt" nillable="true" type="q10:Receipt"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SaveReceiptResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="SaveReceiptResult" nillable="true" type="q11:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetReceipts">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q12:FirmSecurity"/>
+<xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="search" nillable="true" type="q13:SearchParameters"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetReceiptsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetReceiptsResult" nillable="true" type="q14:Receipts"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetDisbursements">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q15:FirmSecurity"/>
+<xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="searchParameters" nillable="true" type="q16:SearchParameters"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetDisbursementsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetDisbursementsResult" nillable="true" type="q17:DisbursementList"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetDisbursementsForFirm">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q18:FirmSecurity"/>
+<xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="searchParameters" nillable="true" type="q19:SearchParameters"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetDisbursementsForFirmResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetDisbursementsForFirmResult" nillable="true" type="q20:DisbursementList"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateDisbursements">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q21:FirmSecurity"/>
+<xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="request" nillable="true" type="q22:Disbursement"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateDisbursementsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="UpdateDisbursementsResult" nillable="true" type="q23:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateDisbursementsForFirm">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q24:FirmSecurity"/>
+<xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="request" nillable="true" type="q25:Disbursement"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateDisbursementsForFirmResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="UpdateDisbursementsForFirmResult" nillable="true" type="q26:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetCountryAndCurrencyList">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q27:FirmSecurity"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetCountryAndCurrencyListResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetCountryAndCurrencyListResult" nillable="true" type="q28:CountryAndCurrencyList"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAchInstructions">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q29:FirmSecurity"/>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAchInstructionsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetAchInstructionsResult" nillable="true" type="q30:Request"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SendPingInstruction">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q31:FirmSecurity"/>
+<xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="pingInsturction" nillable="true" type="q32:PingInstruction"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SendPingInstructionResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="SendPingInstructionResult" nillable="true" type="q33:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="AddAchInstructions">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q34:FirmSecurity"/>
+<xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="request" nillable="true" type="q35:Request"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="AddAchInstructionsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="AddAchInstructionsResult" nillable="true" type="q36:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetBankName">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q37:FirmSecurity"/>
+<xs:element minOccurs="0" name="abaNumber" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetBankNameResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetBankNameResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAllTransactions">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q38:FirmSecurity"/>
+<xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AccountnumberList" nillable="true" type="q39:ArrayOfstring"/>
+<xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BankaccountnumberList" nillable="true" type="q40:ArrayOfstring"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAllTransactionsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetAllTransactionsResult" nillable="true" type="q41:TransactionCollection"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetBalanceInfo">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q42:FirmSecurity"/>
+<xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetBalanceInfoResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetBalanceInfoResult" nillable="true" type="q43:AvailableBalanceInfo"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateReceipt">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q44:FirmSecurity"/>
+<xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="receipt" nillable="true" type="q45:Receipt"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateReceiptResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="UpdateReceiptResult" nillable="true" type="q46:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SaveInternalTransfer">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q47:FirmSecurity"/>
+<xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="request" nillable="true" type="q48:InternalTransfers"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="SaveInternalTransferResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="SaveInternalTransferResult" nillable="true" type="q49:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ProcessSubmittedTransactions">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q50:FirmSecurity"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="ProcessSubmittedTransactionsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="ProcessSubmittedTransactionsResult" nillable="true" type="q51:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetRestrictionDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q52:FirmSecurity"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetRestrictionDetailsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="GetRestrictionDetailsResult" nillable="true" type="q53:ArrayOfAutoApproveRestrictionDetails"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateRestrictionDetails">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q54:FirmSecurity"/>
+<xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Cdm.Backend.Service.Contracts" minOccurs="0" name="restrictionDetailsList" nillable="true" type="q55:ArrayOfAutoApproveRestrictionDetails"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="UpdateRestrictionDetailsResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="UpdateRestrictionDetailsResult" nillable="true" type="q56:AdvisoryData"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAutoApprovalLogStoreDetail">
+<xs:complexType>
+<xs:sequence>
+<xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/SunGard.Phase3.Core.Backend.Application.Contracts.DTO" minOccurs="0" name="firmSecurity" nillable="true" type="q57:FirmSecurity"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="GetAutoApprovalLogStoreDetailResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="GetAutoApprovalLogStoreDetailResult" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
